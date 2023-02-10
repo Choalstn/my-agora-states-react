@@ -23,7 +23,7 @@ function App() {
           <div className="form__container">
             <h1>My Agora States</h1>
 
-            <h1 id="popup_open_btn">질문 등록하기</h1>
+            <h1 className="popup_open_btn">질문 등록하기</h1>
           </div>
 
           <DisucussionContainer data={discussion} />

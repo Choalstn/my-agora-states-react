@@ -12,16 +12,16 @@ function DisucussionContainer(props) {
 
   return (
     <section className="discussion_wrapper1">
-      <section class="discussion__wrapper__answered">
-        <div class="discussion_answered_head">
+      <section className="discussion__wrapper__answered">
+        <div className="discussion_answered_head">
           <h3>Done</h3>
-          <div class="count_answered">{answerFilter.length}</div>
+          <div className="count_answered">{answerFilter.length}</div>
         </div>
 
-        <ul class="discussions__answered__container">
+        <ul className="discussions__answered__container">
           {answerFilter.map((el) => {
             return (
-              <li className="discussion__container">
+              <li className="discussion__container" key={el.id}>
                 <div className="discussion__avatar--wrapper">
                   <img
                     src={el.avatarUrl}
@@ -45,16 +45,16 @@ function DisucussionContainer(props) {
         </ul>
       </section>
 
-      <section class="discussion__wrapper_notAnswered">
-        <div class="discussion_notAnswered_head">
+      <section className="discussion__wrapper_notAnswered">
+        <div className="discussion_notAnswered_head">
           <h3>In Progress</h3>
-          <div class="count_notAnswered">{notAnswerFilter.length}</div>
+          <div className="count_notAnswered">{notAnswerFilter.length}</div>
         </div>
-        <div class="scroll">
-          <ul class="discussions__container__notAnswered">
+        <div className="scroll">
+          <ul className="discussions__container__notAnswered">
             {notAnswerFilter.map((el) => {
               return (
-                <li className="discussion__container">
+                <li className="discussion__container" key={el.id}>
                   <div className="discussion__avatar--wrapper">
                     <img
                       src={el.avatarUrl}
