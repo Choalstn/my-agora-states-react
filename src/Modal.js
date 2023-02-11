@@ -13,6 +13,7 @@ const Modal = (props) => {
   const [discussion, setDiscussion] = useState();
   const date = new Date();
 
+  // 새로 작성한 질문 state
   const handelAuthor = (e) => {
     setAuthor(e.target.value);
   };
@@ -23,6 +24,13 @@ const Modal = (props) => {
 
   const handelContent = (e) => {
     setContent(e.target.value);
+  };
+
+  // 질문 작성하고 다시 데이터 받아오기
+  const getData = () => {
+    axios.get("http://localhost:4000/discussions/").then((res) => {
+      data(res.data);
+    });
   };
 
   const newDisucussion = () => {
@@ -37,13 +45,7 @@ const Modal = (props) => {
         bodyHTML: content,
         avatarUrl: "https://avatars.githubusercontent.com/u/105564451?v=4",
       })
-      .then((res) =>
-        axios.get(
-          "http://localhost:4000/discussions".then((res) => {
-            data(res.data);
-          })
-        )
-      );
+      .then((res) => getData());
 
     close();
   };
