@@ -21,7 +21,10 @@ function DisucussionContainer(props) {
         <ul className="discussions__answered__container">
           {answerFilter.map((el) => {
             return (
-              <li className="discussion__container" key={el.id}>
+              <li
+                className="discussion__container"
+                key={answerFilter.indexOf(el)}
+              >
                 <div className="discussion__avatar--wrapper">
                   <img
                     src={el.avatarUrl}
@@ -54,7 +57,10 @@ function DisucussionContainer(props) {
           <ul className="discussions__container__notAnswered">
             {notAnswerFilter.map((el) => {
               return (
-                <li className="discussion__container" key={el.id}>
+                <li
+                  className="discussion__container"
+                  key={notAnswerFilter.indexOf(el)}
+                >
                   <div className="discussion__avatar--wrapper">
                     <img
                       src={el.avatarUrl}
