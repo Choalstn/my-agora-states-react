@@ -1,11 +1,29 @@
 import React, { useState } from "react";
 import "./App.css";
+import axios from "axios";
 
 import Answered from "./Answered.js";
 import NotAnswered from "./NotAnswered";
 
 function DisucussionContainer(props) {
   const data = props.data;
+  const discussions = props.discussion;
+
+  const getData = () => {
+    axios.get("http://localhost:4000/discussions/").then((res) => {
+      console.log(res.data);
+      discussions(res.data);
+    });
+  };
+
+  const handleDelete = (title) => {
+    console.log("title : ", title);
+    axios
+      .delete(`http://localhost:4000/discussions/delete/${title}`, {
+        data: { title: title },
+      })
+      .then((res) => getData());
+  };
 
   const answerFilter = data.filter((el) => el.answer !== null);
   const notAnswerFilter = data.filter((el) => el.answer === null);
@@ -27,6 +45,7 @@ function DisucussionContainer(props) {
               >
                 <div className="discussion__avatar--wrapper">
                   <img
+                    alt=""
                     src={el.avatarUrl}
                     className="discussion__avatar--image"
                   ></img>
@@ -40,6 +59,14 @@ function DisucussionContainer(props) {
                   <div className="discussion__information">
                     <span className="author">{el.author}</span>
                     <span className="createdAt">{el.createdAt}</span>
+                    <span
+                      className="delete"
+                      onClick={(e) => {
+                        handleDelete(el.title, e);
+                      }}
+                    >
+                      Delete
+                    </span>
                   </div>
                 </div>
               </li>
@@ -76,6 +103,14 @@ function DisucussionContainer(props) {
                     <div className="discussion__information">
                       <span className="author">{el.author}</span>
                       <span className="createdAt">{el.createdAt}</span>
+                      <span
+                        className="delete"
+                        onClick={(e) => {
+                          handleDelete(el.title, e);
+                        }}
+                      >
+                        Delete
+                      </span>
                     </div>
                   </div>
                 </li>

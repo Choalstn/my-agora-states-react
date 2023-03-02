@@ -29,6 +29,7 @@ const Modal = (props) => {
   // 질문 작성하고 다시 데이터 받아오기
   const getData = () => {
     axios.get("http://localhost:4000/discussions/").then((res) => {
+      console.log(res.data);
       data(res.data);
     });
   };

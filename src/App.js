@@ -9,6 +9,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
 
+  // 모달 관련 state 관리
   const openModal = () => {
     setModalOpen(true);
   };
@@ -16,6 +17,7 @@ function App() {
     setModalOpen(false);
   };
 
+  // 서버로부터 데이터 받아오기 state
   const setData = (data) => {
     setDiscussion(data);
   };
@@ -47,7 +49,7 @@ function App() {
             header="질문하기"
             data={setData}
           />
-          <DisucussionContainer data={discussion} />
+          <DisucussionContainer data={discussion} discussion={setData} />
         </>
       )}
     </div>
