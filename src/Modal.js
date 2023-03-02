@@ -56,61 +56,70 @@ const Modal = (props) => {
     <div className={open ? "openModal modal" : "modal"}>
       {open ? (
         <section>
-          <header>
-            {header}
-            <button className="close" onClick={close}>
-              x
-            </button>
-          </header>
+          <div>
+            <header>
+              {header}
+              <p className="headerP1">
+                Start your <br /> study with us
+              </p>
 
-          <main>
-            <form className="form">
-              <div className="form__input--wrapper">
-                <div className="form__input--name">
-                  <label htmlFor="name">Enter your name: </label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    required
-                    onChange={handelAuthor}
-                  />
-                </div>
-                <br />
-                <div className="form__input--title">
-                  <label htmlFor="name">Enter your title: </label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="title"
-                    required
-                    onChange={handelTitle}
-                  />
-                </div>
-                <br />
-                <div className="form__textbox">
-                  <label htmlFor="story">Your question: </label>
-                  <textarea
-                    id="story"
-                    name="story"
-                    placeholder="질문을 작성하세요"
-                    required
-                    onChange={handelContent}
-                  ></textarea>
-                </div>
-                <br />
-              </div>
-            </form>
-          </main>
+              <p className="headerP2">
+                Discover the world's best community if freelancers and business
+                owners
+              </p>
+            </header>
 
-          <footer>
-            <button className="submit" onClick={newDisucussion}>
-              submit
-            </button>
-            <button className="close" onClick={close}>
-              close
-            </button>
-          </footer>
+            <main>
+              <form className="form">
+                <div className="form__input--wrapper">
+                  <p className="inputHeader">Register your Problem</p>
+                  <div className="form__input--name">
+                    <p>name </p>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      required
+                      onChange={handelAuthor}
+                    />
+                  </div>
+                  <br />
+
+                  <div className="form__input--title">
+                    <p>title </p>
+                    <input
+                      type="text"
+                      name="name"
+                      id="title"
+                      required
+                      onChange={handelTitle}
+                    />
+                  </div>
+                  <br />
+                  <div className="form__textbox">
+                    <p>Description </p>
+                    <textarea
+                      id="story"
+                      name="story"
+                      placeholder="질문을 작성하세요"
+                      required
+                      onChange={handelContent}
+                    ></textarea>
+                  </div>
+                  <br />
+                </div>
+              </form>
+
+              <footer>
+                <button className="submit" onClick={newDisucussion}>
+                  submit
+                </button>
+                <button className="close" onClick={close}>
+                  close
+                </button>
+              </footer>
+            </main>
+          </div>
         </section>
       ) : null}
     </div>

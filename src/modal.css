@@ -22,21 +22,34 @@
 }
 .modal > section {
   width: 90%;
-  max-width: 550px;
+  max-width: 750px;
+  height: 500px;
   margin: 0 auto;
-  border-radius: 0.3rem;
+  border-radius: 15px;
+  padding: 10px;
   background-color: #fff;
   /* 팝업이 열릴때 스르륵 열리는 효과 */
   animation: modal-show 0.3s;
   overflow: hidden;
 }
-.modal > section > header {
-  position: relative;
+
+.modal > section > div {
+  display: flex;
+  height: calc(100% - 5px);
+}
+.modal > section > div > header {
+  /* position: relative;
   padding: 16px 64px 16px 16px;
   background-color: #f1f1f1;
-  font-weight: 700;
+  font-weight: 700; */
+  background-color: rgb(226, 225, 244);
+  border-radius: 8px;
+  width: calc(100% - 450px);
+  padding: 20px;
+  color: rgb(121, 101, 200);
 }
-.modal > section > header button {
+
+.modal > section > div > header button {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -47,20 +60,70 @@
   color: #999;
   background-color: transparent;
 }
-.modal > section > main {
-  padding: 16px;
-  border-bottom: 1px solid #dee2e6;
-  border-top: 1px solid #dee2e6;
+
+.headerP1 {
+  font-size: 30px;
+  font-weight: 700;
 }
-.modal > section > footer {
-  padding: 12px 16px;
+
+.headerP2 {
+  color: rgb(174, 174, 230);
+  font-size: smaller;
+  font-weight: 400;
+}
+.modal > section > div > main {
+  /* padding: 16px;
+  border-bottom: 1px solid #dee2e6;
+  border-top: 1px solid #dee2e6; */
+
+  border-radius: 8px;
+  flex-grow: 1;
+}
+
+.inputHeader {
+  font-weight: 700;
+}
+
+.form__input--name,
+.form__input--title,
+.form__textbox {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+input {
+  width: 350px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgb(184, 184, 184);
+}
+
+input:focus {
+  outline: 1px solid rgb(121, 101, 200);
+}
+
+textarea {
+  width: 350px;
+  height: 100px;
+  border-radius: 10px;
+  border: 1px solid rgb(184, 184, 184);
+}
+
+textarea:focus {
+  outline: 1px solid rgb(121, 101, 200);
+}
+.modal > section > div > main > footer {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1px 10px;
+  padding-left: 50px;
   text-align: right;
 }
-.modal > section > footer button {
+.modal > section > div > main > footer button {
   padding: 6px 12px;
-  color: #fff;
-  background-color: #6c757d;
-  border-radius: 5px;
+  color: rgb(121, 101, 200);
+  background-color: rgb(226, 225, 244);
+  border-radius: 50px;
   font-size: 13px;
 }
 .modal.openModal {

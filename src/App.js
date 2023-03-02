@@ -46,7 +46,7 @@ function App() {
           <Modal
             open={modalOpen}
             close={closeModal}
-            header="질문하기"
+            header="AgoraStates"
             data={setData}
           />
           <DisucussionContainer data={discussion} discussion={setData} />
